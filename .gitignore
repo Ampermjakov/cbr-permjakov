@@ -1,0 +1,10 @@
+config.php
+.env
+.env.local
+*.log
+*.bak
+*.tar.gz
+*_
+node_modules/
+vendor/
+.DS_Store
