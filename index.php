@@ -26,8 +26,9 @@ if (isset($_GET['logout'])) {
 
 $checkResult = null;
 $checkedUrl  = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['url'])) {
-    $checkedUrl  = trim($_POST['url']);
+$rawUrl = $_POST['url'] ?? $_GET['q'] ?? $_GET['url'] ?? ''; // ?q= в GET — ссылка из портала
+if ($rawUrl !== '') {
+    $checkedUrl  = trim($rawUrl);
     if (!preg_match('#^https?://#', $checkedUrl)) $checkedUrl = 'https://' . $checkedUrl;
     $checkResult = checkUrl($checkedUrl);
     logAnalytics('check', $checkedUrl);
@@ -94,7 +95,7 @@ $cbrCount   = getCbrCount();
             <form method="POST" class="search-form" id="checkForm">
                 <input type="text" name="url" class="search-input"
                     placeholder="example.com или https://example.com"
-                    value="<?= htmlspecialchars($_POST['url'] ?? '') ?>"
+                    value="<?= htmlspecialchars($checkedUrl) ?>"
                     autocomplete="off" spellcheck="false" required>
                 <button type="submit" class="search-btn" id="checkBtn">Проверить →</button>
             </form>
