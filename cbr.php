@@ -1,36 +1,17 @@
 <?php
 require_once __DIR__.'/config.php';
+require_once __DIR__.'/http.php';
 
-// cbr.ru закрыт защитой DDoS-Guard (JS-проверка), которую file_get_contents/curl
-// пройти не может — данные получаем через headless-браузер (fetch-cbr.js).
-// Результат пишется во временный файл: чтение большого JSON через stdout-пайп
-// proc_open на Windows на порядок медленнее файлового I/O.
+// Данные стоп-листа ЦБ РФ забираем обычным HTTP-запросом (curl) — без запуска внешних программ.
+// Раньше cbr.ru закрывала защита DDoS-Guard, и использовался безголовый браузер на Node.js;
+// с российских адресов серверов запрос проходит без него.
 function fetchCbrJson(): array {
-    $outFile = sys_get_temp_dir() . '/cbr_fetch_' . bin2hex(random_bytes(8)) . '.json';
-
-    $cmd = escapeshellarg(NODE_BIN) . ' ' . escapeshellarg(CBR_FETCH_SCRIPT) . ' '
-         . escapeshellarg(CBR_API_URL) . ' ' . escapeshellarg($outFile);
-
-    $descriptors = [1 => ['pipe', 'w'], 2 => ['pipe', 'w']];
-    $process = @proc_open($cmd, $descriptors, $pipes, __DIR__);
-    if (!is_resource($process)) return ['error' => 'Не удалось запустить обработчик ЦБ РФ'];
-
-    fclose($pipes[1]);
-    $stderr = stream_get_contents($pipes[2]);
-    fclose($pipes[2]);
-    $exitCode = proc_close($process);
-
-    if ($exitCode !== 0 || !is_file($outFile)) {
-        @unlink($outFile);
-        error_log('CBR fetch-cbr.js failed (exit '.$exitCode.'): '.$stderr);
-        return ['error' => 'Не удалось получить данные с ЦБ РФ'];
+    $r = httpFetch(CBR_API_URL, ['headers' => ['Accept: application/json']]);
+    if (isset($r['error'])) {
+        error_log('CBR fetch failed: ' . $r['error']);
+        return ['error' => 'Не удалось получить данные с ЦБ РФ: ' . $r['error']];
     }
-
-    $json = file_get_contents($outFile);
-    @unlink($outFile);
-    if (!$json) return ['error' => 'Не удалось получить данные с ЦБ РФ'];
-
-    return ['json' => $json];
+    return ['json' => $r['body']];
 }
 
 function syncCbrList(): array {
