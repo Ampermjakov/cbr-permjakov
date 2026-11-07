@@ -47,7 +47,7 @@ $cbrCount   = getCbrCount();
     <title>ЦБ РФ Стоп-лист — проверка сервисов | permjakov.ru</title>
     <meta name="description" content="Проверка сайтов и сервисов по предупредительному списку Центрального банка России. Отслеживание статуса с уведомлениями.">
     <link rel="icon" href="https://permjakov.ru/amper.svg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">
 </head>
 
 <body>

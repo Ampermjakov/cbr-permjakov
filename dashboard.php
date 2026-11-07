@@ -28,7 +28,7 @@ $cleanCount   = count($items) - $inListCount;
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Мой кабинет — ЦБ РФ Мониторинг</title>
 <link rel="icon" href="https://permjakov.ru/amper.svg" type="image/x-icon">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">
 </head>
 <body>
 
