@@ -39,13 +39,14 @@ $cleanCount   = count($items) - $inListCount;
     <div class="topnav-inner">
         <a href="https://permjakov.ru" class="brand"><span>//</span> permjakov.ru</a>
         <div class="nav-tools">
-            <a href="https://chek.permjakov.ru/"  class="nav-tool">РКН Аудит</a>
-            <a href="https://rkn.permjakov.ru"    class="nav-tool">РКН Блок</a>
-            <a href="https://cbr.permjakov.ru"    class="nav-tool active">ЦБ РФ</a>
-            <a href="https://whois.permjakov.ru"  class="nav-tool">Whois</a>
-            <a href="https://dns.permjakov.ru"    class="nav-tool">DNS</a>
-            <a href="https://ssl.permjakov.ru"    class="nav-tool">SSL</a>
-            <a href="https://monitor.permjakov.ru" class="nav-tool">Мониторинг</a>
+            <a href="https://pd.permjakov.ru/" class="nav-tool">РКН ПД</a>
+            <a href="https://chek.permjakov.ru/" class="nav-tool">РКН Аудит</a>
+            <a href="https://rkn.permjakov.ru/" class="nav-tool">РКН Блок</a>
+            <a href="https://cbr.permjakov.ru/" class="nav-tool active">ЦБ Стоп-лист</a>
+            <a href="https://znak.permjakov.ru/" class="nav-tool">Товарные знаки</a>
+            <a href="https://whois.permjakov.ru/" class="nav-tool">Whois</a>
+            <a href="https://agents.permjakov.ru/" class="nav-tool">Иноагенты</a>
+            <a href="https://terror.permjakov.ru/" class="nav-tool">Террористы</a>
         </div>
         <div class="nav-right">
             <a href="/" class="nav-tool">← Проверить</a>
@@ -249,13 +250,14 @@ $cleanCount   = count($items) - $inListCount;
 
 <div class="nav-mobile" id="navMobile">
     <button class="nav-mobile-close" id="navMobileClose" aria-label="Закрыть">✕</button>
+    <a href="https://pd.permjakov.ru/" class="m-link">РКН ПД</a>
     <a href="https://chek.permjakov.ru/" class="m-link">РКН Аудит</a>
-    <a href="https://rkn.permjakov.ru"   class="m-link">РКН Блок</a>
-    <a href="https://cbr.permjakov.ru"   class="m-link active">ЦБ РФ</a>
-    <a href="https://whois.permjakov.ru" class="m-link">Whois</a>
-    <a href="https://dns.permjakov.ru"   class="m-link">DNS</a>
-    <a href="https://ssl.permjakov.ru"   class="m-link">SSL</a>
-    <a href="https://monitor.permjakov.ru" class="m-link">Мониторинг</a>
+    <a href="https://rkn.permjakov.ru/" class="m-link">РКН Блок</a>
+    <a href="https://cbr.permjakov.ru/" class="m-link active">ЦБ Стоп-лист</a>
+    <a href="https://znak.permjakov.ru/" class="m-link">Товарные знаки</a>
+    <a href="https://whois.permjakov.ru/" class="m-link">Whois</a>
+    <a href="https://agents.permjakov.ru/" class="m-link">Иноагенты</a>
+    <a href="https://terror.permjakov.ru/" class="m-link">Террористы</a>
 </div>
 
 <script>

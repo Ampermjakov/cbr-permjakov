@@ -59,12 +59,14 @@ $cbrCount   = getCbrCount();
         <div class="topnav-inner">
             <a href="https://permjakov.ru" class="brand"><span>//</span> permjakov.ru</a>
             <div class="nav-tools">
-                <a href="https://pd.permjakov.ru/" class="nav-tool">РНК ПД</a>
+                <a href="https://pd.permjakov.ru/" class="nav-tool">РКН ПД</a>
                 <a href="https://chek.permjakov.ru/" class="nav-tool">РКН Аудит</a>
-                <a href="https://rkn.permjakov.ru" class="nav-tool">РКН Блок</a>
-                <a href="https://cbr.permjakov.ru" class="nav-tool active">ЦБ Стоп-лист</a>
-                <a href="https://whois.permjakov.ru" class="nav-tool">Whois</a>
-                <a href="https://monitor.permjakov.ru" class="nav-tool">Мониторинг</a>
+                <a href="https://rkn.permjakov.ru/" class="nav-tool">РКН Блок</a>
+                <a href="https://cbr.permjakov.ru/" class="nav-tool active">ЦБ Стоп-лист</a>
+                <a href="https://znak.permjakov.ru/" class="nav-tool">Товарные знаки</a>
+                <a href="https://whois.permjakov.ru/" class="nav-tool">Whois</a>
+                <a href="https://agents.permjakov.ru/" class="nav-tool">Иноагенты</a>
+                <a href="https://terror.permjakov.ru/" class="nav-tool">Террористы</a>
             </div>
             <div class="nav-right">
                 <?php if ($session): ?>
@@ -210,24 +212,28 @@ $cbrCount   = getCbrCount();
         <footer class="footer">
             <p>© <?= date('Y') ?> <a href="https://permjakov.ru">permjakov.ru</a> · Данные: <a href="https://cbr.ru/development/warning-list/" target="_blank" rel="noopener">cbr.ru</a></p>
             <div class="footer-links">
-                <a href="https://pd.permjakov.ru/" class="nav-tool">РНК ПД</a>
+                <a href="https://pd.permjakov.ru/" class="nav-tool">РКН ПД</a>
                 <a href="https://chek.permjakov.ru/" class="nav-tool">РКН Аудит</a>
-                <a href="https://rkn.permjakov.ru" class="nav-tool">РКН Блок</a>
-                <a href="https://cbr.permjakov.ru" class="nav-tool active">ЦБ Стоп-лист</a>
-                <a href="https://whois.permjakov.ru" class="nav-tool">Whois</a>
-                <a href="https://monitor.permjakov.ru" class="nav-tool">Мониторинг</a>
+                <a href="https://rkn.permjakov.ru/" class="nav-tool">РКН Блок</a>
+                <a href="https://cbr.permjakov.ru/" class="nav-tool active">ЦБ Стоп-лист</a>
+                <a href="https://znak.permjakov.ru/" class="nav-tool">Товарные знаки</a>
+                <a href="https://whois.permjakov.ru/" class="nav-tool">Whois</a>
+                <a href="https://agents.permjakov.ru/" class="nav-tool">Иноагенты</a>
+                <a href="https://terror.permjakov.ru/" class="nav-tool">Террористы</a>
             </div>
         </footer>
     </div>
 
     <div class="nav-mobile" id="navMobile">
         <button class="nav-mobile-close" id="navMobileClose" aria-label="Закрыть">✕</button>
-        <a href="https://pd.permjakov.ru/" class="nav-tool">РНК ПД</a>
+        <a href="https://pd.permjakov.ru/" class="nav-tool">РКН ПД</a>
         <a href="https://chek.permjakov.ru/" class="nav-tool">РКН Аудит</a>
-        <a href="https://rkn.permjakov.ru" class="nav-tool">РКН Блок</a>
-        <a href="https://cbr.permjakov.ru" class="nav-tool active">ЦБ Стоп-лист</a>
-        <a href="https://whois.permjakov.ru" class="nav-tool">Whois</a>
-        <a href="https://monitor.permjakov.ru" class="nav-tool">Мониторинг</a>
+        <a href="https://rkn.permjakov.ru/" class="nav-tool">РКН Блок</a>
+        <a href="https://cbr.permjakov.ru/" class="nav-tool active">ЦБ Стоп-лист</a>
+        <a href="https://znak.permjakov.ru/" class="nav-tool">Товарные знаки</a>
+        <a href="https://whois.permjakov.ru/" class="nav-tool">Whois</a>
+        <a href="https://agents.permjakov.ru/" class="nav-tool">Иноагенты</a>
+        <a href="https://terror.permjakov.ru/" class="nav-tool">Террористы</a>
     </div>
 
     <div class="modal-overlay" id="trackModal">
